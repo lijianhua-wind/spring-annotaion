@@ -4,6 +4,7 @@ import com.lijianhua.aop.MathCalculator;
 import com.lijianhua.config.MainConfigOfAOP;
 import com.lijianhua.config.MainConfigOfLifeCycle;
 import org.junit.jupiter.api.Test;
+import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 /**
@@ -13,11 +14,12 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
  */
 public class IOCAOPTest {
 
-    AnnotationConfigApplicationContext applicationContext =
-            new AnnotationConfigApplicationContext(MainConfigOfAOP.class);
+
 
     @Test
     void testLifeCycle() {
+        AnnotationConfigApplicationContext applicationContext =
+                new AnnotationConfigApplicationContext(MainConfigOfAOP.class);
         System.out.println("容器创建完成");
         MathCalculator calculator
                 = applicationContext.getBean(MathCalculator.class);
@@ -26,7 +28,7 @@ public class IOCAOPTest {
         applicationContext.close();
     }
 
-    private void printBeans() {
+    private void printBeans(ApplicationContext applicationContext) {
         String[] names = applicationContext.getBeanDefinitionNames();
         for (String name : names) {
             System.out.println(name);
