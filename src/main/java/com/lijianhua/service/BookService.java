@@ -1,5 +1,8 @@
 package com.lijianhua.service;
 
+import com.lijianhua.dao.BookDAO;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 /**
@@ -10,4 +13,12 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class BookService {
+
+    @Qualifier("bookDAO")
+    @Autowired(required=false)
+    private BookDAO bookDAO;
+
+    public void print() {
+        System.out.println("bookDAO：" + bookDAO);
+    }
 }

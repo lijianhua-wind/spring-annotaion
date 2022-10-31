@@ -1,5 +1,7 @@
 package com.lijianhua.bean;
 
+import org.springframework.beans.factory.annotation.Value;
+
 /**
  * @author 李建华
  * @create 2022/10/29 14:45
@@ -7,8 +9,21 @@ package com.lijianhua.bean;
  * @since 1.0
  */
 public class Person {
+
+    @Value("张三")
     private String name;
+    @Value("#{20 - 2}")
     private Integer age;
+    @Value("${person.nickName}")
+    private String nickName;
+
+    public String getNickName() {
+        return nickName;
+    }
+
+    public void setNickName(String nickName) {
+        this.nickName = nickName;
+    }
 
     public Person() {
     }
@@ -23,6 +38,7 @@ public class Person {
         return "Person{" +
                 "name='" + name + '\'' +
                 ", age=" + age +
+                ", nickName='" + nickName + '\'' +
                 '}';
     }
 
