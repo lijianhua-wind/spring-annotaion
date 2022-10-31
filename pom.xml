@@ -20,6 +20,11 @@
             <artifactId>spring-context</artifactId>
             <version>5.3.23</version>
         </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-aspects</artifactId>
+            <version>5.3.23</version>
+        </dependency>
 
         <!--jupiter-->
         <dependency>
@@ -27,6 +32,27 @@
             <artifactId>junit-jupiter</artifactId>
             <version>5.9.0</version>
             <scope>test</scope>
+        </dependency>
+
+        <!--inject注解-->
+        <dependency>
+            <groupId>javax.inject</groupId>
+            <artifactId>javax.inject</artifactId>
+            <version>1</version>
+        </dependency>
+
+        <!--druid数据源-->
+        <!-- https://mvnrepository.com/artifact/com.alibaba/druid -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+            <version>1.2.14</version>
+        </dependency>
+
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.30</version>
         </dependency>
     </dependencies>
 

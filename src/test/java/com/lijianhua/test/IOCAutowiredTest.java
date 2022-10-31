@@ -1,7 +1,10 @@
 package com.lijianhua.test;
 
+import com.lijianhua.bean.Boss;
+import com.lijianhua.bean.Car;
 import com.lijianhua.config.MainConfigOfAutowired;
 import com.lijianhua.config.MainConfigOfLifeCycle;
+import com.lijianhua.dao.BookDAO;
 import com.lijianhua.service.BookService;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -18,7 +21,10 @@ public class IOCAutowiredTest {
         AnnotationConfigApplicationContext applicationContext =
                 new AnnotationConfigApplicationContext(MainConfigOfAutowired.class);
         //测试是否注入成功
-        applicationContext.getBean(BookService.class).print();
+//        Boss boss = applicationContext.getBean(Boss.class);
+//        System.out.println(boss.getCar() == applicationContext.getBean(Car.class));
+//
+//        System.out.println(boss.getCar() == applicationContext.getBean(BookDAO.class).getCar());
         //关闭容器
         applicationContext.close();
     }

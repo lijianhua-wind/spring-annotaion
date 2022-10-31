@@ -1,5 +1,6 @@
 package com.lijianhua.dao;
 
+import com.lijianhua.bean.Car;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -10,6 +11,8 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public class BookDAO {
+
+    private Car car;
 
     private String mark = "1";
 
@@ -23,7 +26,8 @@ public class BookDAO {
     @Override
     public String toString() {
         return "BookDAO{" +
-                "mark='" + mark + '\'' +
+                "car=" + car +
+                ", mark='" + mark + '\'' +
                 '}';
     }
 
@@ -33,5 +37,13 @@ public class BookDAO {
 
     public void setMark(String mark) {
         this.mark = mark;
+    }
+
+    public Car getCar() {
+        return car;
+    }
+
+    public void setCar(Car car) {
+        this.car = car;
     }
 }

@@ -1,5 +1,7 @@
 package com.lijianhua.config;
 
+import com.lijianhua.bean.Car;
+import com.lijianhua.bean.Red;
 import com.lijianhua.dao.BookDAO;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -31,14 +33,21 @@ import org.springframework.context.annotation.Primary;
  */
 @Configuration
 @ComponentScan(basePackages = {"com.lijianhua.controller",
-        "com.lijianhua.dao", "com.lijianhua.service"})
+        "com.lijianhua.dao", "com.lijianhua.service", "com.lijianhua.bean"})
 public class MainConfigOfAutowired {
 
     @Bean("bookDAO2")
     @Primary
-    public BookDAO bookDAO() {
+    public BookDAO bookDAO(Car car) {
+        System.out.println("我造的车" + car);
         BookDAO bookDAO = new BookDAO();
         bookDAO.setMark("2");
+        bookDAO.setCar(car);
         return bookDAO;
+    }
+
+    @Bean
+    public Red red() {
+        return new Red();
     }
 }
