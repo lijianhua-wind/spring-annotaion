@@ -21,10 +21,13 @@ public class IOCAOPTest {
         System.out.println("容器创建完成");
         MathCalculator calculator
                 = applicationContext.getBean(MathCalculator.class);
-        System.out.println(calculator.div(1, 1));
+        int result = calculator.div(1, 1);
+        System.out.println(result);
         //关闭容器
         applicationContext.close();
     }
+
+
 
     private void printBeans() {
         String[] names = applicationContext.getBeanDefinitionNames();
